@@ -1,0 +1,26 @@
+button {
+    background-color: transparent;
+    color: var(--black);
+    border-radius: 6px;
+    border: 0;
+    padding-block: 8px;
+    padding-inline: 16px;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 1px;
+  }
+
+button[aria-pressed="true"] {
+background-color: #f4f4f5;
+}
+
+button[disabled] {
+    opacity: .5;
+    pointer-events: none;
+    user-select: none;
+}

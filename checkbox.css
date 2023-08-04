@@ -1,0 +1,53 @@
+div {
+    width: 18px;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    border: solid 1px var(--border);
+    display: flex;
+}
+
+label {
+    display: flex;
+    gap: 8px;
+    position: relative;
+    align-items: center;
+    user-select: none;
+}
+
+label:has(:focus-visible) div {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 1px;
+}
+
+label:has(input:checked) div {
+    background-color: var(--accent-color);
+    border: solid 1px var(--accent-color);
+}
+
+label:has(input:not(:checked)) svg {
+    display: none;
+} 
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+}
+
+label:has(input[type="checkbox"]:disabled) div {
+    background-color: #f6f6f6;
+    cursor: not-allowed;
+}
+
+svg {
+    width: 15px;
+    height: 15px;
+    margin: auto;
+    /* stroke: color-contrast(AccentColor vs white, black); */
+}
+
+:host {
+    width: fit-content;
+    display: block;
+}

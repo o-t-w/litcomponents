@@ -1,0 +1,42 @@
+button {
+    background-color: var(--black);
+    color: white;
+    border-radius: 6px;
+    border: 0;
+    padding-block: 8px;
+    padding-inline: 24px;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+:host(.outline) button {
+color: var(--black);
+/* box-shadow: 0 1px 1px 0 rgba(0,0,0,.1); 
+border: solid 1px var(--border); */
+/* box-shadow: rgba(0,0,0,.12) 0 1px 1px, rgba(60,66,87, .2) 0 0 0 1px; */
+border: solid 1px transparent;
+background: linear-gradient(white, white) padding-box,
+linear-gradient(#dcdde0, #c7c8cb) border-box;
+}
+
+:host(.solid) button {
+    background-image: linear-gradient(#6862ea, #5954e5);
+    text-shadow: 1px 1px 1px #04006c68;
+    border: solid 1px #5b51c0;
+    color: var(--white);
+    box-shadow: inset 0px 1px 1px 0 rgba(255, 255, 255, 0.25);
+    /* box-shadow: inset 0px 1px 1px 0 rgba(255, 255, 255, 0.25), 0 1px 1px 0 rgba(19, 0, 47, 0.3); */
+    }
+
+* {
+    box-sizing: border-box;
+}
+
+button:focus-visible {
+    /* outline: 2px solid #000;
+    outline-offset: 1px; */
+    /* border-color: var(--focus-border-color); */
+    outline: solid 2px var(--focus-border-color);
+    outline-offset: 1px;
+  }

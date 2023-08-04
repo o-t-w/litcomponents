@@ -1,0 +1,29 @@
+:host {
+    display: block;
+}
+
+label, div {
+    width: fit-content;
+    display: block;
+}
+
+input[type="text"] {
+    border-radius: 6px;
+    border-color: oklch(0.92 0 0);
+    border-style: solid;
+    border-width: 1px;
+    padding-inline: 12px;
+    padding-block: 8px;
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 500;
+    color: oklch(0.14 0 0);
+}
+
+input:disabled {
+    opacity: 0;
+}

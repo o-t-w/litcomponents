@@ -6,17 +6,109 @@
     <title>&lt;my-element> Demo</title>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="../my-element.js"></script>
+    <script type="module" src="../my-button.js"></script>
+    <script type="module" src="../toggle-button.js"></script>
+    <script type="module" src="../my-input.js"></script>
+    <script type="module" src="../file.js"></script>
+    <script type="module" src="../checkbox.js"></script>
+    <script type="module" src="../radio.js"></script>
+    <script type="module" src="../filedragger.js"></script>
     <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
+
+      .focus-style {
+        border-color: rgb(11, 110, 197);
+        outline: rgb(169, 223, 254) 0px 0px 0px 2px;
       }
+      :root {
+        --black: rgb(30,30,30);
+        --white: rgb(250, 250, 250);
+        --ui-text: oklch(0.14 0 0);
+        --border: oklch(0.92 0 0);
+        --border: oklch(0.88 0 0);
+        --focus-color: black;
+        /* --accent-color: oklch(0.54 0.16 252); */
+        --accent-color: AccentColor;
+        --focus-border-color: oklch(0.54 0.16 252.42);
+        --focus-color: oklch(0.54 0.16 252.42);
+        --focus-outline: solid 2px oklch(0.88 0.07 233.8);
+      }
+
+      body {
+        font-family: ui-sans-serif, system-ui;
+        color: oklch(0.14 0 0);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 1200px;
+        padding-inline: 32px;
+      }
+      button:focus-visible {
+        outline: 2px solid #000;
+      }
+
+      button {
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    border: 0;
+}
+
+  my-button.times::part(button) {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  my-toggle-button::part(button) {
+    width: 84px;
+  }
     </style>
   </head>
   <body>
-    <my-element>
-      <p>This is child content</p>
-    </my-element>
+    <my-button class="times">
+      Submit
+    </my-button>
+
+    <my-button>
+      Submit
+    </my-button>
+
+    <my-toggle-button>
+      Turn on
+    </my-toggle-button>
+    <my-toggle-button disabled>
+      Italics
+    </my-toggle-button>
+
+<div style="display: flex; gap: 12px;">
+  <my-button class="outline">
+    Outline
+  </my-button>
+
+  <my-button class="solid">
+    Submit
+  </my-button>
+</div>
+
+      <my-input>Email</my-input>
+
+    <my-file-input></my-file-input>
+
+
+      <my-file-input disabled></my-file-input>
+
+      <my-radio></my-radio>
+
+    <my-checkbox></my-checkbox>  
+
+    <my-checkbox disabled></my-checkbox>  
+    <my-checkbox checked disabled></my-checkbox>  
+
+    <file-dragger></file-dragger>
+    <file-dragger disabled></file-dragger>
+    <script>
+      document.querySelector('my-toggle-button')
+      .addEventListener('click', function(event) {  
+        event.target.textContent = event.target.toggled ? 'Turn off' : 'Turn on';
+      })
+    </script>
   </body>
 </html>

@@ -1,0 +1,24 @@
+input[type="radio"] {
+    appearance: none;
+    margin: 0;
+    background-color: var(--accent-color);
+    border-radius: 100%;
+    width: 18px;
+    aspect-ratio: 1;
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+}
+
+input[type="radio"]:focus-visible {
+    /* outline: var(--focus-outline); */
+    outline: oklch(0.54 0.16 252.42) solid 1px;
+    box-shadow: oklch(0.88 0.07 233.8) 0px 0px 0px 3px;
+}
+
+:host {
+    height: fit-content;
+    display: block;
+    width: fit-content;
+}
