@@ -16,17 +16,25 @@ export class Filedragger extends LitElement {
 
   render() {
     return html`
-      <div ?inert="${this.disabled}" @drop="${this._handleDrag}" @dragover="${this._handleDragover}">
+      <div @drop="${this._handleDrag}" @dragover="${this._handleDragover}">
         <p>Drag or</p>
-        <button inert>Select a file</button>
+        <button ?disabled="${this.disabled}" @click="${this._handleClick}">Select a file</button>
         <p class="message">No file selected</p>
-        <input type="file" />  
+        <input @change="${this._handleInput}" tabindex="-1" type="file" />  
       </div>
     `;
   }
 
   _handleDragover(e) {
     e.preventDefault();
+  }
+
+  _handleClick(e) {
+    this.shadowRoot.querySelector('input').click();
+  }
+
+  _handleInput(e) {
+    this.shadowRoot.querySelector('.message').textContent = e.target.files[0].name;
   }
 
   _handleDrag(e) {
