@@ -18,7 +18,7 @@ export class Filedragger extends LitElement {
     return html`
       <div ?inert="${this.disabled}" @drop="${this._handleDrag}" @dragover="${this._handleDragover}">
         <p>Drag or</p>
-        <button>Select a file</button>
+        <button inert>Select a file</button>
         <p class="message">No file selected</p>
         <input type="file" />  
       </div>
