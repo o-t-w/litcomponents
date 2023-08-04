@@ -13,8 +13,10 @@ input[type="radio"] {
 
 input[type="radio"]:focus-visible {
     /* outline: var(--focus-outline); */
-    outline: oklch(0.54 0.16 252.42) solid 1px;
-    box-shadow: oklch(0.88 0.07 233.8) 0px 0px 0px 3px;
+    /* outline: oklch(0.54 0.16 252.42) solid 1px;
+    box-shadow: oklch(0.88 0.07 233.8) 0px 0px 0px 3px; */
+    outline: solid 2px var(--focus-border-color);
+    outline-offset: 1px;
 }
 
 :host {

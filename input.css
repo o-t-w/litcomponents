@@ -9,13 +9,20 @@ label, div {
 
 input[type="text"] {
     border-radius: 6px;
-    border-color: oklch(0.92 0 0);
+    border-color: var(--border);
     border-style: solid;
     border-width: 1px;
     padding-inline: 12px;
     padding-block: 8px;
     font-size: 15px;
     margin-top: 6px;
+}
+
+input[type="text"]:focus-visible {
+    /* border-color: var(--focus-border-color);
+    outline: var(--focus-outline); */
+    border-color: var(--focus-inner);
+    outline: var(--focus-outer);
 }
 
 label {

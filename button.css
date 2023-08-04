@@ -29,6 +29,25 @@ linear-gradient(#dcdde0, #c7c8cb) border-box;
     /* box-shadow: inset 0px 1px 1px 0 rgba(255, 255, 255, 0.25), 0 1px 1px 0 rgba(19, 0, 47, 0.3); */
     }
 
+:host(.solid) button:hover {
+    background-image: linear-gradient(#736cff, #5a55f2);
+}
+
+:host(.solid) button:active {
+    background-image: linear-gradient(#5e58d5, #4e49d9);
+    scale: 0.98;
+}
+
+:host(.outline) button:hover {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1); 
+}
+
+:host(.outline) button:active {
+    scale: 0.98;
+    background: linear-gradient(rgb(246, 246, 246), rgb(246, 246, 246)) padding-box,
+linear-gradient(#dcdde0, #c7c8cb) border-box;
+}
+
 * {
     box-sizing: border-box;
 }
