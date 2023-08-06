@@ -1,0 +1,7 @@
+div {
+    box-shadow: 0 1px 2px 0 oklch(0 0 0 / 0.05);
+    border: solid 1px oklch(0.92 0 0);
+    border-radius: 8px;
+    padding: 24px;
+    margin-trim: block;
+}

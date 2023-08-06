@@ -1,8 +1,8 @@
 import {LitElement, html} from 'lit';
-import fileInputStyles from './fileinput.css' assert { type: 'css' };
+import styles from './fileinput.css' assert { type: 'css' };
 
 export class MyFileInput extends LitElement {
-  static styles = fileInputStyles;
+  static styles = styles;
   
   static properties = {
     disabled: {type: Boolean},

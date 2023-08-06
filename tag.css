@@ -1,0 +1,12 @@
+div {
+    border-radius: 999px;
+    font-size: 12px;
+    display: inline flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgb(255, 241, 229);
+    color: rgb(188, 76, 0);
+    width: fit-content;
+    padding: 0 10px;
+    height: 24px;
+}

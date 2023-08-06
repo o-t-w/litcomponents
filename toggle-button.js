@@ -1,9 +1,9 @@
 import {LitElement, html} from 'lit';
-import toggleButtonStyles from './toggle-button.css' assert { type: 'css' };
+import styles from './toggle-button.css' assert { type: 'css' };
 import reset from './reset.css' assert { type: 'css' };
 
 export class MyToggleButton extends LitElement {
-  static styles = [reset, toggleButtonStyles];
+  static styles = [reset, styles];
   
   static properties = {
     toggled: {type: Boolean},

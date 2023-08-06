@@ -1,9 +1,9 @@
 import {LitElement, html} from 'lit';
-import checkboxStyles from './checkbox.css' assert { type: 'css' };
+import styles from './checkbox.css' assert { type: 'css' };
 import reset from './reset.css' assert { type: 'css' };
 
 export class MyCheckbox extends LitElement {
-  static styles = [reset, checkboxStyles];
+  static styles = [reset, styles];
   
   static properties = {
     disabled: {type: Boolean},

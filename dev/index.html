@@ -7,13 +7,16 @@
     <meta name="color-scheme" content="dark light">
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="../my-button.js"></script>
+    <script type="module" src="../button.js"></script>
     <script type="module" src="../toggle-button.js"></script>
-    <script type="module" src="../my-input.js"></script>
-    <script type="module" src="../file.js"></script>
+    <script type="module" src="../input.js"></script>
+    <script type="module" src="../fileinput.js"></script>
     <script type="module" src="../checkbox.js"></script>
     <script type="module" src="../radio.js"></script>
     <script type="module" src="../filedragger.js"></script>
+    <script type="module" src="../card.js"></script>
+    <script type="module" src="../tag.js"></script>
+    <script type="module" src="../progress.js"></script>
     <style>
 
       .focus-style {
@@ -36,6 +39,7 @@
 
         --focus-inner: oklch(0.64 0.21 256.96);
         --focus-outer: solid 2px oklch(0.88 0.07 233.8);
+        --progress-color: AccentColor;
       }
 
       body {
@@ -132,7 +136,18 @@
 
     <file-dragger></file-dragger>
     <file-dragger disabled></file-dragger>
-    <button>Focus test</button>
+
+    <my-card>
+      <h2>This is a card</h2>
+    </my-card>
+
+    <my-tag>backlog</my-tag>
+    <my-tag>backlog</my-tag>
+    <my-tag>backlog</my-tag>
+    <my-tag>backlog</my-tag>
+
+    <my-progress></my-progress>
+    
     <script>
       document.querySelector('my-toggle-button')
       .addEventListener('click', function(event) {  

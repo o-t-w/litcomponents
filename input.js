@@ -1,8 +1,8 @@
 import {LitElement, html} from 'lit';
-import inputStyles from './input.css' assert { type: 'css' };
+import styles from './input.css' assert { type: 'css' };
 
 export class MyInput extends LitElement {
-  static styles = inputStyles;
+  static styles = styles;
   
   static properties = {
     disabled: {type: Boolean},

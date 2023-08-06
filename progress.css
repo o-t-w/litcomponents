@@ -1,0 +1,22 @@
+progress {
+    appearance: none;
+    inline-size: 100%;
+    block-size: 8px;
+    background-color: rgb(230, 232, 235);
+    border-radius: 3px;
+    box-shadow: none;
+    display: block;
+    border: 0px;
+    margin: 0px;
+}
+
+progress::-webkit-progress-value {
+    background: var(--progress-color);
+    border-radius: 5px 0px 0px 5px;
+    transition: width 0.25s ease-out 0s, background 0.25s ease-out 0s;
+}
+
+progress::-webkit-progress-bar {
+    background-color: transparent;
+    border-radius: 5px;
+}

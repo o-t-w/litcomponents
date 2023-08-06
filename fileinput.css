@@ -8,13 +8,11 @@ input[type="file"] {
     border-style: solid;
     border-width: 1px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
-    /* padding: 8px; */
     font-family: inherit;
     color: var(--ui-text);
     font-weight: 350;
     padding: 0;
-
-    
+    cursor: pointer;
 }
 
 input[type="file"]:focus-visible {
@@ -27,13 +25,10 @@ input[type="file"]:focus-visible {
     font-weight: 500;
     font-family: inherit;
     color: var(--ui-text);
-
     border-right: solid 1px oklch(0.92 0 0);
     padding-block: 9px;
     margin-right: 16px;
     padding-inline: 12px;
-    /* background-color: rgb(243 243 243); */
-    /* background-image: linear-gradient(rgb(243, 243, 243), rgb(248, 248, 247)); */
     background-color: oklch(0.98 0 0);
     background-color: var(--bg-secondary);
 }
