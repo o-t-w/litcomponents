@@ -4,9 +4,14 @@ div {
     display: inline flex;
     align-items: center;
     gap: 8px;
-    background-color: rgb(255, 241, 229);
-    color: rgb(188, 76, 0);
+    background-color: var(--tag-bg, rgb(255, 241, 229));
+    color: var(--tag-text, var( --ui-text));
     width: fit-content;
     padding: 0 10px;
     height: 24px;
+}
+
+svg {
+    fill: lch(from var(--tag-bg) calc(l / 3) c h);
+    fill: rgb(188, 76, 0);
 }
