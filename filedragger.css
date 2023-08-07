@@ -8,6 +8,7 @@ div {
     align-items: center;
     gap: 12px;
     position: relative;
+    background-color: white;
 }
 
 div:has(button:disabled), button:disabled {

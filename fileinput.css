@@ -13,6 +13,7 @@ input[type="file"] {
     font-weight: 350;
     padding: 0;
     cursor: pointer;
+    background-color: white;
 }
 
 input[type="file"]:focus-visible {

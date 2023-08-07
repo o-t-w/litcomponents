@@ -21,6 +21,7 @@
     <script type="module" src="../avatarstack.js"></script>
     <script type="module" src="../range.js"></script>
     <script type="module" src="../password.js"></script>
+    <script type="module" src="../color-picker.js"></script>
     <style>
 
       .focus-style {
@@ -45,6 +46,8 @@
         --focus-outer: solid 2px oklch(0.88 0.07 233.8);
         --progress-color: AccentColor;
         --accent-color: AccentColor;
+
+        --semi-transparent: oklch(0.24 0.07 260.42 / 0.06);
       }
 
       .tag-green {
@@ -55,13 +58,18 @@
       body {
         font-family: ui-sans-serif, system-ui;
         color: oklch(0.14 0 0);
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
         max-width: 1200px;
         padding-inline: 32px;
         margin-inline: auto;
         margin-block: 42px;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px;
+        border-radius: 6px;
       }
 
       @media(prefers-color-scheme: dark) {
@@ -75,6 +83,7 @@
           --bg-secondary: oklch(0.32 0 0);
           --ui-text: oklch(0.95 0 0);
           --border: oklch(0.75 0 0);
+          --semi-transparent: oklch(1 0 0 / 0.48);
         }
 
         html {
@@ -106,69 +115,73 @@
     </style>
   </head>
   <body>
-    <my-button class="times">
+    <main style="background-color: var(--bg-secondary);">
+      <my-button class="times">
+        Submit
+      </my-button>
+  
+      <my-button>
+        Submit
+      </my-button>
+  
+      <my-toggle-button>
+        Turn on
+      </my-toggle-button>
+      <my-toggle-button disabled>
+        Italics
+      </my-toggle-button>
+  
+  <div style="display: flex; gap: 12px;">
+    <my-button class="outline">
+      Outline
+    </my-button>
+  
+    <my-button class="outline icon">
+    <svg aria-hidden="true" focusable="false" role="img" class="octicon octicon-heart" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"></path></svg>
+  </my-button>
+  
+    <my-button class="solid">
       Submit
     </my-button>
+  </div>
+  
+        <my-input>Email</my-input>
+  
+      <my-file-input></my-file-input>
+  
+  
+        <my-file-input disabled></my-file-input>
+  
+        <my-radio></my-radio>
+  
+      <my-checkbox></my-checkbox>  
+  
+      <my-checkbox disabled></my-checkbox>  
+      <my-checkbox checked disabled></my-checkbox>  
+  
+      <file-dragger></file-dragger>
+      <file-dragger disabled></file-dragger>
+  
+      <my-card>
+        <h2>This is a card</h2>
+      </my-card>
+  
+      <my-tag>backlog</my-tag>
+      <my-tag circle>backlog</my-tag>
+      <my-tag class="tag-green">backlog</my-tag>
+      <my-tag class="tag-green" circle>backlog</my-tag>
+  
+      <my-progress></my-progress>
+      
+      <my-avatar-stack></my-avatar-stack>
+      <my-avatar-stack style="--avatar-size: 40px;"></my-avatar-stack>
+  
+      <my-range></my-range>
+  
+      <my-password-input></my-password-input>
 
-    <my-button>
-      Submit
-    </my-button>
-
-    <my-toggle-button>
-      Turn on
-    </my-toggle-button>
-    <my-toggle-button disabled>
-      Italics
-    </my-toggle-button>
-
-<div style="display: flex; gap: 12px;">
-  <my-button class="outline">
-    Outline
-  </my-button>
-
-  <my-button class="outline icon">
-  <svg aria-hidden="true" focusable="false" role="img" class="octicon octicon-heart" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"><path d="m8 14.25.345.666a.75.75 0 0 1-.69 0l-.008-.004-.018-.01a7.152 7.152 0 0 1-.31-.17 22.055 22.055 0 0 1-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"></path></svg>
-</my-button>
-
-  <my-button class="solid">
-    Submit
-  </my-button>
-</div>
-
-      <my-input>Email</my-input>
-
-    <my-file-input></my-file-input>
-
-
-      <my-file-input disabled></my-file-input>
-
-      <my-radio></my-radio>
-
-    <my-checkbox></my-checkbox>  
-
-    <my-checkbox disabled></my-checkbox>  
-    <my-checkbox checked disabled></my-checkbox>  
-
-    <file-dragger></file-dragger>
-    <file-dragger disabled></file-dragger>
-
-    <my-card>
-      <h2>This is a card</h2>
-    </my-card>
-
-    <my-tag>backlog</my-tag>
-    <my-tag circle>backlog</my-tag>
-    <my-tag class="tag-green">backlog</my-tag>
-    <my-tag class="tag-green" circle>backlog</my-tag>
-
-    <my-progress></my-progress>
-    
-    <my-avatar-stack></my-avatar-stack>
-    <my-avatar-stack style="--avatar-size: 40px;"></my-avatar-stack>
-
-    <my-range></my-range>
-
-    <my-password-input></my-password-input>
+      <my-color-picker></my-color-picker>
+    </main>
 
     <script>
       document.querySelector('my-toggle-button')
