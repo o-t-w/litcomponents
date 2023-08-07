@@ -1,10 +1,9 @@
 import {LitElement, html} from 'lit';
-import styles from './reset.css' assert { type: 'css' };
-import reset from './input.css' assert { type: 'css' };
-import passwordStyles from './password.css' assert { type: 'css' };
+import reset from './reset.css' assert { type: 'css' };
+import styles from './password.css' assert { type: 'css' };
 
 export class PasswordInput extends LitElement {
-  static styles = [reset, styles, passwordStyles];
+  static styles = [reset, styles];
   
   static properties = {
     disabled: {type: Boolean},
@@ -31,9 +30,11 @@ export class PasswordInput extends LitElement {
 
   render() {
     return html`
-      <label part="label"><div><slot>Label</slot></div>
+      <label part="label"><div><slot>Password</slot></div>
+      <div>
       <input type="password" ?disabled="${this.disabled}" part="input">
-      <button @click="${this._toggle}" type="button">Show</button>    
+      <button @click="${this._toggle}" type="button">Show</button>  
+      </div>  
       </label>
     `;
   }
