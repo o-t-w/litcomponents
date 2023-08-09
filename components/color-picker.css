@@ -4,7 +4,7 @@
     background-image: conic-gradient(#ff00e7, oklch(0.51 0.3 263.71), lime, yellow, red);
     background-color: var(--picked-color);
     border-radius: 100%;
-    border: solid 1px #f4f4f4; 
+    border: solid 1px white; 
     outline: solid 1px #e9e9ed;
     box-shadow: inset rgba(0,0,0,.4) 0 0 1px;
     cursor: pointer;
@@ -34,4 +34,8 @@
     appearance: none;
     opacity: 0;
     position: absolute;
+  }
+
+  .picker:has(:focus-visible) {
+    outline: solid 2px var(--focus-border-color);
   }

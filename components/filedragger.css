@@ -32,3 +32,9 @@ input {
 .message {
     font-size: 14px;
 }
+
+@media (prefers-color-scheme: dark) {
+    div {
+        background-color: oklch(0.39 0 0);
+    }
+}

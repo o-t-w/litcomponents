@@ -8,20 +8,21 @@
     <meta name="color-scheme" content="dark light">
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="../button.js"></script>
-    <script type="module" src="../toggle-button.js"></script>
-    <script type="module" src="../input.js"></script>
-    <script type="module" src="../fileinput.js"></script>
-    <script type="module" src="../checkbox.js"></script>
-    <script type="module" src="../radio.js"></script>
-    <script type="module" src="../filedragger.js"></script>
-    <script type="module" src="../card.js"></script>
-    <script type="module" src="../tag.js"></script>
-    <script type="module" src="../progress.js"></script>
-    <script type="module" src="../avatarstack.js"></script>
-    <script type="module" src="../range.js"></script>
-    <script type="module" src="../password.js"></script>
-    <script type="module" src="../color-picker.js"></script>
+    <script type="module" src="../components/button.js"></script>
+    <script type="module" src="../components/toggle-button.js"></script>
+    <script type="module" src="../components/input.js"></script>
+    <script type="module" src="../components/fileinput.js"></script>
+    <script type="module" src="../components/checkbox.js"></script>
+    <script type="module" src="../components/radio.js"></script>
+    <script type="module" src="../components/filedragger.js"></script>
+    <script type="module" src="../components/card.js"></script>
+    <script type="module" src="../components/tag.js"></script>
+    <script type="module" src="../components/progress.js"></script>
+    <script type="module" src="../components/avatarstack.js"></script>
+    <script type="module" src="../components/range.js"></script>
+    <script type="module" src="../components/password.js"></script>
+    <script type="module" src="../components/color-picker.js"></script>
+    <script type="module" src="../components/toast.js"></script>
     <style>
 
       .focus-style {
@@ -181,6 +182,11 @@
       <my-password-input></my-password-input>
 
       <my-color-picker></my-color-picker>
+
+      <button popovertarget="toast" popovertargetaction="show">Show toast</button>
+      <my-toast id="toast" popover="manual">
+        Notification message
+      </my-toast>
     </main>
 
     <script>

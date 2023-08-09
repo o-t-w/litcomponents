@@ -16,6 +16,12 @@ input[type="file"] {
     background-color: white;
 }
 
+@media(prefers-color-scheme: dark) {
+    input[type="file"] {
+        background-color: oklch(0.39 0 0);
+    }
+}
+
 input[type="file"]:focus-visible {
     border-color: var(--focus-inner);
     outline: var(--focus-outer);
