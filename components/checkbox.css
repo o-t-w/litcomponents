@@ -5,6 +5,7 @@ div {
     border: solid 1px var(--border);
     display: flex;
     background-color: white;
+    box-shadow: oklch(0 0 0 / 0.1) 0px 1px 1px
 }
 
 label {
@@ -13,10 +14,6 @@ label {
     position: relative;
     align-items: center;
     user-select: none;
-}
-
-label:has(input:not([disabled])):hover div {
-    outline: solid 4px color-mix(in oklch, AccentColor, transparent 80%); /* Style based on Twitter.com. Update to use relative color with transparency once it ships... */
 }
 
 label:has(:focus-visible) div {
@@ -66,5 +63,14 @@ svg {
     label:has(input[type="checkbox"]:disabled) div {
         background-color: oklch(0.5 0 0);
         box-shadow: none;
+        opacity: .5;
     }
+
+    label:has(input:not([disabled])):hover div {
+        border-color: oklch(0.75 0.01 252.36);
+    }
+}
+
+label:has(input:not([disabled])):hover div {
+    outline: solid 3px color-mix(in oklch, AccentColor, transparent 75%); /* Style based on Twitter.com. Update to use relative color with transparency once it ships... */
 }
