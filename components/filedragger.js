@@ -12,6 +12,17 @@ export class Filedragger extends LitElement {
   constructor() {
     super();
     this.disabled = false;
+
+    document.addEventListener('paste', async (event) => {
+      event.preventDefault();
+      if (!event.clipboardData.files.length) {
+        return;
+      }
+      else {
+        this.shadowRoot.querySelector('input').files = event.clipboardData.files;
+        this.shadowRoot.querySelector('.message').textContent = event.clipboardData.files[0].name;
+      }
+    })
   }
 
   render() {

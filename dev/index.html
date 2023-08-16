@@ -25,6 +25,10 @@
     <script type="module" src="../components/toast.js"></script>
     <style>
 
+      .warn {
+        fill: var(--error);
+      }
+
       .focus-style {
         border-color: rgb(11, 110, 197);
         outline: rgb(169, 223, 254) 0px 0px 0px 2px;
@@ -80,11 +84,14 @@
           --focus-inner: oklch(0.77 0.16 227.22);
           --focus-outer: solid 2px oklch(0.77 0.16 227.22 / .25);
           --ui-bg: oklch(0.24 0 0);
-          --bg: oklch(0.35 0 0);
-          --bg-secondary: oklch(0.32 0 0);
+          /* --bg: oklch(0.35 0 0); */
+          --bg: rgb(13, 17, 23);
+          /* --bg-secondary: oklch(0.32 0 0); */
+          --bg-secondary: rgb(34, 39, 46);
           --ui-text: oklch(0.95 0 0);
           --border: oklch(0.75 0 0);
           --semi-transparent: oklch(1 0 0 / 0.48);
+          --error: oklch(0.7 0.2 32.37);
         }
 
         html {
@@ -146,23 +153,30 @@
     </my-button>
   </div>
   
-        <my-input>Email</my-input>
-  
-      <my-file-input></my-file-input>
-  
-  
-        <my-file-input disabled></my-file-input>
-  
-        <my-radio></my-radio>
-  
-      <my-checkbox></my-checkbox>  
-  
-      <my-checkbox disabled></my-checkbox>  
-      <my-checkbox checked disabled></my-checkbox>  
-  
-      <file-dragger></file-dragger>
-      <file-dragger disabled></file-dragger>
-  
+    <form style="display: flex; gap: 24px; flex-direction: column;" action="">
+      <my-input>Email</my-input>
+      <svg width="32px" xmlns="http://www.w3.org/2000/svg" class="warn" viewBox="0 0 512 512"><path d="M449.07 399.08L278.64 82.58c-12.08-22.44-44.26-22.44-56.35 0L51.87 399.08A32 32 0 0080 446.25h340.89a32 32 0 0028.18-47.17zm-198.6-1.83a20 20 0 1120-20 20 20 0 01-20 20zm21.72-201.15l-5.74 122a16 16 0 01-32 0l-5.74-121.95a21.73 21.73 0 0121.5-22.69h.21a21.74 21.74 0 0121.73 22.7z"/></svg>
+
+    <my-file-input></my-file-input>
+
+
+      <my-file-input disabled></my-file-input>
+
+      <my-radio></my-radio>
+
+    <my-checkbox></my-checkbox>  
+
+    <my-checkbox disabled></my-checkbox>  
+    <my-checkbox checked disabled></my-checkbox>  
+
+    <file-dragger></file-dragger>
+    <file-dragger disabled></file-dragger>
+
+    <input type="text" required>
+
+    <button type="submit">Submit</button>
+    </form>
+
       <my-card>
         <h2>This is a card</h2>
       </my-card>

@@ -19,6 +19,10 @@ input[type="radio"]:focus-visible {
     outline-offset: 1px;
 }
 
+input:hover {
+    outline: solid 4px color-mix(in oklch, AccentColor, transparent 80%); /* Style based on Twitter.com. Update to use relative color with transparency once it ships... */
+}
+
 :host {
     height: fit-content;
     display: block;

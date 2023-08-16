@@ -15,7 +15,7 @@
     align-items: center;
     width: fit-content;
     padding: 4px 8px;
-    gap: 8px;
+    gap: 12px;
     border-radius: 6px;
     height: 34px;
     position: relative;
@@ -38,4 +38,12 @@
 
   .picker:has(:focus-visible) {
     outline: solid 2px var(--focus-border-color);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .picker div {
+      outline: 0;
+      border: 1px solid rgb(156, 156, 156);
+      box-shadow: rgb(0, 0, 0) 0px 0px 3px;
+    }
   }

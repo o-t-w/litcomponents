@@ -10,18 +10,13 @@ button {
     cursor: pointer;
 }
 
-@media (prefers-color-scheme: dark) {
-    button {
-        background-color: var(--white);
-        color: var(--black);
-    }
-}
-
 :host(.outline) button {
 color: var(--black);
 /* box-shadow: 0 1px 1px 0 rgba(0,0,0,.1); 
 border: solid 1px var(--border); */
 /* box-shadow: rgba(0,0,0,.12) 0 1px 1px, rgba(60,66,87, .2) 0 0 0 1px; */
+/* box-shadow: rgba(0, 0, 40, 0.05) 0px 1px 0px; */
+box-shadow: inset rgba(0, 0, 40, 0.1) 0px -1px 0px;
 border: solid 1px transparent;
 background: linear-gradient(white, white) padding-box,
 linear-gradient(#dcdde0, #c7c8cb) border-box;
@@ -72,3 +67,23 @@ button:focus-visible {
     width: 34px;
     aspect-ratio: 1;
   }
+
+
+  @media (prefers-color-scheme: dark) {
+    button {
+        background-color: var(--white);
+        color: var(--black);
+    }
+
+    :host(.solid) button {
+        /* background-image: linear-gradient(oklch(0.64 0.21 280.54), oklch(0.54 0.21 278.06)); */
+        /* border: 1px solid oklch(0.51 0.17 282.68); */
+        box-shadow: oklch(0.13 0.09 264.05 / 0.82) 0px 1px 0px;
+    }
+    
+    :host(.outline) button {
+        background: linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box padding-box, linear-gradient(rgb(220, 221, 224), rgb(199, 200, 203)) border-box border-box;
+        color: var(--white);
+        box-shadow: oklch(0.13 0.09 264.05) 0px 1.5px 0px;
+    }
+}

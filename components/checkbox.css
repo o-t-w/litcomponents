@@ -4,6 +4,7 @@ div {
     border-radius: 4px;
     border: solid 1px var(--border);
     display: flex;
+    background-color: white;
 }
 
 label {
@@ -12,6 +13,10 @@ label {
     position: relative;
     align-items: center;
     user-select: none;
+}
+
+label:has(input:not([disabled])):hover div {
+    outline: solid 4px color-mix(in oklch, AccentColor, transparent 80%); /* Style based on Twitter.com. Update to use relative color with transparency once it ships... */
 }
 
 label:has(:focus-visible) div {

@@ -35,6 +35,6 @@ input {
 
 @media (prefers-color-scheme: dark) {
     div {
-        background-color: oklch(0.39 0 0);
+        background-color: oklch(0.35 0.03 258.18);
     }
 }
