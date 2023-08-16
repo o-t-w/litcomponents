@@ -56,3 +56,15 @@ svg {
     width: fit-content;
     display: block;
 }
+
+@media (prefers-color-scheme: dark) {
+    div {
+        background-color: oklch(0.2 0.01 256.84);
+        box-shadow: oklch(0 0 0) 0px 1px 0px;
+    }
+
+    label:has(input[type="checkbox"]:disabled) div {
+        background-color: oklch(0.5 0 0);
+        box-shadow: none;
+    }
+}

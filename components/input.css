@@ -28,9 +28,16 @@ input:focus-visible {
 label {
     font-size: 15px;
     font-weight: 500;
-    color: oklch(0.14 0 0);
+    /* color: oklch(0.14 0 0); */
 }
 
 input:disabled {
     opacity: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    input {
+        background-color: oklch(0.2 0.01 256.84);
+        box-shadow: oklch(0 0 0) 0px 1px 0px;
+    }
 }
