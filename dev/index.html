@@ -188,6 +188,12 @@ dialog .close-btn:focus {
   outline: solid 1px  var(--focus-border-color);
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
     </style>
   </head>
   <body>
@@ -245,16 +251,24 @@ dialog .close-btn:focus {
     <button type="submit">Submit</button>
     </form>
 
+     <div class="grid">
       <my-card>
         <h2>This is a card</h2>
       </my-card>
+      <my-card>
+        <h2>This is a card</h2>
+      </my-card>
+      <my-card>
+        <h2>This is a card</h2>
+      </my-card>
+     </div>
   
       <my-tag>backlog</my-tag>
       <my-tag circle>backlog</my-tag>
       <my-tag class="tag-green">backlog</my-tag>
       <my-tag class="tag-green" circle>backlog</my-tag>
   
-      <div style="max-width: 500px;">
+      <div style="max-width: 350px;">
         <my-progress></my-progress>
       </div>
 

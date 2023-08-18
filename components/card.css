@@ -1,6 +1,8 @@
 div {
     box-shadow: 0 1px 2px 0 oklch(0 0 0 / 0.05);
-    border: solid 1px oklch(0.92 0 0);
+    border: solid 1px oklch(0 0 0);
+    box-shadow: inset 0px 1px 1px 0 rgba(255, 255, 255, 0.2);
+    background-color: oklch(0.35 0.03 258.18);
     border-radius: 8px;
     padding: 24px;
     margin-trim: block;
