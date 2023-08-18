@@ -8,6 +8,11 @@ input {
     --track-fg: var(#44546F, #0052CC);
 }
 
+input[type="range"] {
+    outline-color: var(--focus-border-color);
+    outline-offset: 1px;
+}
+
 input::-webkit-slider-runnable-track {
     border-radius: 2px;
     border: 0;

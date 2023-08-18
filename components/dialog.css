@@ -1,0 +1,11 @@
+dialog {
+    border: solid 1px oklch(0.45 0.03 246);
+    background-color: oklch(0.33 0.03 250);
+    border-radius: 10px;
+}
+
+dialog p {
+    border-top: 1px ridged oklch(0.37 0.03 250);
+    /* border-top: 1px ridged oklch(0.26 0.03 253.34); */
+    padding-block: 12px; 
+}

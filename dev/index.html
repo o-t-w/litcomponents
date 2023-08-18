@@ -51,7 +51,7 @@
         --focus-outer: solid 2px oklch(0.88 0.07 233.8);
         --progress-color: AccentColor;
         --accent-color: AccentColor;
-
+        --error: oklch(0.64 0.22 27.5);
         --semi-transparent: oklch(0.24 0.07 260.42 / 0.06);
       }
 
@@ -93,6 +93,7 @@
           --border: oklch(0.65 0.01 252.36 / 1);
           --semi-transparent: oklch(1 0 0 / 0.48);
           --error: oklch(0.7 0.2 32.37);
+          --error: oklch(0.74 0.17 28.82);
         }
 
         html {
@@ -121,6 +122,72 @@
   my-toggle-button::part(button) {
     width: 84px;
   }
+
+
+
+  dialog {
+    border: solid 1px oklch(0.45 0.03 246);
+    /* background-color: oklch(0.33 0.03 250); */
+    box-shadow: oklch(0.1 0.06 286.96 / 0.6) 0 3px 13px, oklch(0.1 0.06 271.87 / 0.4) 0 0 17px 1px; 
+    background-color: oklch(0.31 0.03 250 / 1);
+    background-image: url(noisebigger.png);
+    background-repeat: repeat;
+    background-size: 217px;
+    border-radius: 10px;
+    color: white;
+    max-width: 500px;
+    padding: 0;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(1px);
+}
+
+dialog h2 {
+  font-weight: 400;
+  line-height: 1.3;
+  font-size: 22px;
+  padding-inline: 24px;
+  margin-block: 24px;
+  text-wrap: balance;
+}
+
+dialog p {
+    box-shadow: oklch(0.37 0.03 250) 0 -1px 0;
+    border-top: 1px solid oklch(0.26 0.03 253.34);
+    margin: 0;
+    padding-inline: 24px;
+    padding-block: 16px;
+    font-size: 14px;
+    color: oklch(0.74 0.02 246.2);
+    background-color: oklch(0.31 0.03 250 / 1);
+    /* background-color: oklch(0.29 0.03 250 / 1);
+    background-image: url(noisebigger.png);
+    background-repeat: repeat;
+    background-size: 217px; */
+}
+
+dialog svg {
+  color: oklch(0.74 0.02 246.2);
+}
+
+dialog .close-btn {
+  position: absolute;
+  display: flex;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  top: 1px;
+  right: 1px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 6px 8px 6px 6px;
+}
+
+dialog .close-btn:focus {
+  outline: solid 1px  var(--focus-border-color);
+}
+
     </style>
   </head>
   <body>
@@ -187,24 +254,45 @@
       <my-tag class="tag-green">backlog</my-tag>
       <my-tag class="tag-green" circle>backlog</my-tag>
   
-      <my-progress></my-progress>
+      <div style="max-width: 500px;">
+        <my-progress></my-progress>
+      </div>
+
+      <div style="max-width: 200px;">
+        <my-range></my-range>
+      </div>
       
       <my-avatar-stack></my-avatar-stack>
       <my-avatar-stack style="--avatar-size: 40px;"></my-avatar-stack>
-  
-      <my-range></my-range>
   
       <my-password-input></my-password-input>
 
       <my-color-picker></my-color-picker>
 
+      <button class="dialog-button">Show dialog</button>
+      <dialog>
+        <button class="close-btn">
+          <svg width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+        </button>
+        <h2>Disk cleanup utility is cleaning up unnecessary files on your PC</h2>
+      <p>Show more info</p>
+      </dialog>
+
       <button popovertarget="toast" popovertargetaction="show">Show toast</button>
-      <my-toast id="toast" popover="manual">
-        Notification message
-      </my-toast>
+      <div style="height: fit-content; background-color: pink; position: fixed; bottom: 16px; width: 100%; left: 0; right: 0; max-width: 1200px; margin: auto;">
+        <my-toast id="toast" popover="manual">
+          Notification message
+        </my-toast>
+      </div>
     </main>
 
-    <script>
+    <script type="module">
+      import styles from '../components/dialog.css' assert { type: 'css' };
+
+      document.querySelector('.dialog-button').addEventListener('click', function() {
+        document.querySelector('dialog').showModal();
+      })
+
       document.querySelector('my-toggle-button')
       .addEventListener('click', function(event) {  
         event.target.textContent = event.target.toggled ? 'Turn off' : 'Turn on';
