@@ -1,9 +1,18 @@
 div {
     box-shadow: 0 1px 2px 0 oklch(0 0 0 / 0.05);
-    border: solid 1px oklch(0 0 0);
-    box-shadow: inset 0px 1px 1px 0 rgba(255, 255, 255, 0.2);
-    background-color: oklch(0.35 0.03 258.18);
+    background-color: white;
     border-radius: 8px;
     padding: 24px;
     margin-trim: block;
+}
+
+@media(prefers-color-scheme: dark) {
+    div {
+        background-image: url(../dev/noisebigger.png);
+        background-repeat: repeat;
+        background-size: 200px;
+        border: solid 1px oklch(0 0 0);
+        box-shadow: inset 0px 1px 1px 0 rgba(255, 255, 255, 0.15);
+        background-color: oklch(0.35 0.03 258.18);
+    }
 }
